@@ -2,8 +2,8 @@ organization := "com.packt"
 
 name := "chapter7-goingfurther"
 
-scalaVersion := "2.10.4"
-val sparkVersion="1.4.1"
+scalaVersion := "2.10.5"
+val sparkVersion="1.6.2"
 
 libraryDependencies  ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion % "provided",

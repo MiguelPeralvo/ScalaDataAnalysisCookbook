@@ -64,6 +64,7 @@ scalastyle-output.xml
 scalastyle.txt
 spark-*-bin-*.tgz
 spark-tests.log
+src/main/resources/application.conf
 src_managed/
 streaming-tests.log
 target/
