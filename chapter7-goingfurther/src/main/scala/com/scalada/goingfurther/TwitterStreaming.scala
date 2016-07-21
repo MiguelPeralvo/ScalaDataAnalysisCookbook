@@ -27,8 +27,10 @@ object TwitterStreaming extends App {
   val conf = new SparkConf()
     .setAppName("TwitterStreaming")
     .setMaster("local[2]")
-    .set(ConfigurationOptions.ES_NODES, "192.168.99.100") //Default is localhost. Point to ES node when required
+    .set(ConfigurationOptions.ES_NODES, "localhost") //Default is localhost. Point to ES node when required
     .set(ConfigurationOptions.ES_PORT, "9200")
+    .set(ConfigurationOptions.ES_NODES_WAN_ONLY, "true")
+    .set(ConfigurationOptions.ES_INDEX_AUTO_CREATE, "true")
 
   val sc = new SparkContext(conf)
 
@@ -37,7 +39,7 @@ object TwitterStreaming extends App {
     .setOAuthConsumerSecret(consumerSecret)
     .setOAuthAccessToken(accessToken)
     .setOAuthAccessTokenSecret(accessTokenSecret)
-    .setUseSSL(true)
+    //.setUseSSL(true)
 
   val twitterAuth = Some(new OAuthAuthorization(builder.build()))
 
