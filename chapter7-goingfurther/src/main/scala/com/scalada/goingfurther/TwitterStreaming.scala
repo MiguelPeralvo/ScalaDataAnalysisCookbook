@@ -27,7 +27,7 @@ object TwitterStreaming extends App {
   val conf = new SparkConf()
     .setAppName("TwitterStreaming")
     .setMaster("local[2]")
-    .set(ConfigurationOptions.ES_NODES, "localhost") //Default is localhost. Point to ES node when required
+    .set(ConfigurationOptions.ES_NODES, "192.168.99.100") //Default is localhost. Point to ES node when required
     .set(ConfigurationOptions.ES_PORT, "9200")
 
   val sc = new SparkContext(conf)
